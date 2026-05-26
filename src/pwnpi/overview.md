@@ -1,4 +1,5 @@
-# P4wnP1 aloa
+{{#title P4wnP1}}
+# P4wnP1 ALOA
 
 ## Goal of the project
 This project was meant to show a more advanced RubberDucky and how features like Storage Emulation can make it harder to spot and allow for more complex attacks.

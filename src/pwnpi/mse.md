@@ -1,3 +1,4 @@
+{{#title P4wnP1 - storage emulation}}
 # Mass Storage Emulation
 
 The P4wnP1 can emulate a USB flash drive or a read-only CD-ROM, which helps maintain the illusion of it being just an ordinary USB drive.

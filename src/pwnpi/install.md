@@ -1,3 +1,4 @@
+{{#title P4wnP1 - install}}
 # Installation
 
 ## 1. Flash the Image

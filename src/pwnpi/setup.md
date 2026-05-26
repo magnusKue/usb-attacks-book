@@ -1,3 +1,4 @@
+{{#title P4wnP1 - setup}}
 ## 1. Accessing the Pi
 
 ### 1.1 Access via Wi-Fi
