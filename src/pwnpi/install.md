@@ -17,8 +17,8 @@ $ lsblk
 ```
 
 The device will likely appear as something like `/dev/sdX`.
-
-> ⚠️ **Double-check the device name before proceeding — writing to the wrong device will corrupt that drive!**
+> [!WARNING]
+> **Double-check the device name before proceeding — writing to the wrong device will corrupt that drive!**
 
 Now write the image:
 
