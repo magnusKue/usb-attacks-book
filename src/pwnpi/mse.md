@@ -43,4 +43,19 @@ The generated image is stored at:
 /usr/local/P4wnP1/ums/flashdrive/<name>.bin
 ```
 
-It can then be selected directly in the web UI.
+
+## 2. Enable the Image
+
+Now that the P4wnP1 has our image, we can set it up.
+
+Open the Web UI and switch to the USB tab:
+
+![Tab USB](../../assets/tab-usb.png)
+
+In the bottom right, enable `Mass Storage` and open the settings with the button that appears to its right. Then select your image from the dropdown.
+
+It should look like this:
+
+![Popup Mass Storage Settings](../../assets/popup-mass-storage.png)
+
+Now close the popup, deploy the config with the `Deploy` button at the top, and you're done!
