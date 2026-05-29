@@ -9,7 +9,7 @@
       - [Installation RubberDucky](./rubduc/installation.md)
       - [Project structure](./rubduc/structure.md)
       - [The Payload](./rubduc/payload.md)
-- [C2 Server]()
+   - [C2 Server](./c2/overview.md)
       - [Installation C2]()
 
 
