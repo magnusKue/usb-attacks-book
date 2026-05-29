@@ -7,8 +7,9 @@
 - [Project 1 - DIY RubberDucky](./rubduc/overview.md)
    - [RubberDucky](./rubduc/rubduc_overview.md)
       - [Installation RubberDucky](./rubduc/installation.md)
-      - [Project structure](,/rubduc/structure.md)
-   - [C2 Server]()
+      - [Project structure](./rubduc/structure.md)
+      - [The Payload](./rubduc/payload.md)
+- [C2 Server]()
       - [Installation C2]()
 
 
