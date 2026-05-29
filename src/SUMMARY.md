@@ -4,7 +4,13 @@
 
 ---
 
-- [Project 1 - DIY RubberDucky]()
+- [Project 1 - DIY RubberDucky](./rubduc/overview.md)
+   - [RubberDucky](./rubduc/rubduc_overview.md)
+      - [Installation RubberDucky](./rubduc/installation.md)
+      - [Project structure](,/rubduc/structure.md)
+   - [C2 Server]()
+      - [Installation C2]()
+
 
 - [Project 2 - P4wnPi aloa](./pwnpi/overview.md) 
    - [installation](./pwnpi/install.md)

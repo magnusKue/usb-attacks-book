@@ -28,4 +28,4 @@ This book contains tutorials for setting up all three projects. It was written f
 
 ## AI usage
 
-All of these pages have been written by hand and AI has only been used to fix up grammar and spelling mistakes!
+All of these pages have been written by hand. AI has only been used to fix up grammar and spelling mistakes!
