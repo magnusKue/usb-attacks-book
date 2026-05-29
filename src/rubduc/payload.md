@@ -26,9 +26,9 @@ There are multiple actions used here — let's look at all of them:
 
 | Key     | Value                                                              |
 |---------|--------------------------------------------------------------------|
-| SLEEP   | Sleep for `v` seconds                                              |
-| PRESS   | Press and hold key `v` (Adafruit HID keycode: `Keycode.<key>`)    |
-| SEND    | Press and release key `v` (Adafruit HID keycode: `Keycode.<key>`) |
-| WRITE   | Type out the string `v`                                            |
-| RELEASE | Release all keys. No value needed, so set to `None`               |
-| LED     | Change the LED color to RGB tuple `v`                              |
+| `SLEEP`   | Sleep for `v` seconds                                              |
+| `PRESS`   | Press and hold key `v` (Adafruit HID keycode: `Keycode.<key>`)    |
+| `SEND`    | Press and release key `v` (Adafruit HID keycode: `Keycode.<key>`) |
+| `WRITE`   | Type out the string `v`                                            |
+| `RELEASE` | Release all keys. No value needed, so set to `None`               |
+| `LED`     | Change the LED color to RGB tuple `v`                              |
