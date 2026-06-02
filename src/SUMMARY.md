@@ -9,8 +9,10 @@
       - [Installation RubberDucky](./rubduc/installation.md)
       - [Project structure](./rubduc/structure.md)
       - [The Payload](./rubduc/payload.md)
-   - [C2 Server](./c2/overview.md)
-      - [Installation C2]()
+   - [Command and Control (C2)](./c2/overview.md)
+      - [Server Installation](./c2/installation.md)
+      - [Operator Client Setup](./c2/setup.md)
+      - [Sliver CLI Cheat-Sheet](./c2/cheatsheet.md)
 
 
 - [Project 2 - P4wnPi aloa](./pwnpi/overview.md) 
