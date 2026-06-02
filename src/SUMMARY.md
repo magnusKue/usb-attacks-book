@@ -12,7 +12,7 @@
    - [Command and Control (C2)](./c2/overview.md)
       - [Server Installation](./c2/installation.md)
       - [Operator Client Setup](./c2/setup.md)
-      - [Sliver CLI Cheat-Sheet](./c2/cheatsheet.md)
+      - [Sliver CLI Cheat-Sheet](./c2/cheat-sheet.md)
 
 
 - [Project 2 - P4wnPi aloa](./pwnpi/overview.md) 
