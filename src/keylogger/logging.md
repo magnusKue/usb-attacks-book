@@ -24,3 +24,31 @@ The entire log file will be printed to the serial output.
 
 
 6. Type `CLEAR` to clear delete logs
+
+
+## Method 2: via Python Log Reader
+
+For a more convenient experience with automatic device detection and log cleaning, use the included `reader.py` script.
+
+### Setup
+
+Install the required dependency:
+
+```bash
+pip install pyserial
+```
+
+### Running the Reader
+
+```bash
+python3 reader.py
+```
+
+### Features
+
+- **Auto-detection**: Automatically finds RP2040 devices
+- **Interactive menu** with four options:
+  1. **Read Log (RAW)**: Displays raw log output exactly as sent from the device
+  2. **Read Log (Cleaned)**: Processes the log to produce readable text
+  3. **Clear Log**: Erases the stored log file
+  4. **Exit**: Closes the serial connection and exits
