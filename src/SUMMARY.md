@@ -21,4 +21,8 @@
    - [Mass Storage Emulation](./pwnpi/mse.md)    
    - [HID Injection using js](./pwnpi/hid.md)
 
-- [Project 3 - DIY Keylogger]()
+- [Project 3 - DIY Keylogger](./keylogger/overview.md)
+   - [Hardware](./keylogger/hardware.md)
+   - [Installation/Setup](./keylogger/installation.md)
+   - [First Boot UP](./keylogger/firstboot.md)
+   - [Logging](./keylogger/logging.md)
