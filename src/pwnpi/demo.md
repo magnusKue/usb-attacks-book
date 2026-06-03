@@ -23,3 +23,8 @@ then create the payload as done before:
 $ ./genimg -i ./payload -o mario -l WORKFILES -s 2048
 ```
 Next enable mass storage emulation and continue with the HID payload.
+
+
+## Payload preparation
+Now onto the payload!
+
