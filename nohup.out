@@ -1,5 +1,0 @@
- WARN Expected a start of a link, actually got Some(Text(Borrowed("[")))
-ERROR Summary parsing failed for file="/home/davidh/Dokumente/HS/Offensive/usb-attacks-book/src/SUMMARY.md"
-	Caused by: There was an error parsing the numbered chapters
-	Caused by: There was an error parsing the numbered chapters
-	Caused by: failed to parse SUMMARY.md line 25, column 6: The link items for nested chapters must only contain a hyperlink

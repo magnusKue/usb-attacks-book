@@ -7,7 +7,7 @@ This guide is written for an Arch Linux setup. If you are using Windows, this gu
 Install the Arduino IDE using:
 
 ```bash
-yay -S arduino-ide-bin
+$ yay -S arduino-ide-bin
 ```
 
 ## Clone the Repository
@@ -15,7 +15,7 @@ yay -S arduino-ide-bin
 Clone the project repository and open it in the Arduino IDE:
 
 ```bash
-git clone https://git.magnusku.de/David_Heunisch/Keylogger.git
+$ git clone https://git.magnusku.de/David_Heunisch/Keylogger.git
 ```
 
 ## Initial Setup

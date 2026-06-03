@@ -20,6 +20,7 @@
    - [setup](./pwnpi/setup.md)
    - [Mass Storage Emulation](./pwnpi/mse.md)    
    - [HID Injection using js](./pwnpi/hid.md)
+   - [Demo Project](./pwnpi/demo.md)
 
 - [Project 3 - DIY Keylogger](./keylogger/overview.md)
    - [Hardware](./keylogger/hardware.md)
