@@ -12,7 +12,11 @@ genimg
 payload:
 MGBA.appimage  SML.gb
 ```
-the payload consists of a legally aquired copy of `Super Mario Land (Rev 1)` and an appimage of the mgba emulater downloaded [here](https://github.com/mgba-emu/mgba/releases/download/0.10.5/mGBA-0.10.5-appimage-x64.appimage)
+the payload consists of a legally aquired copy of `Super Mario Land (Rev 1)` and an appimage of the mgba emulater downloaded [here](https://github.com/mgba-emu/mgba/releases/download/0.10.5/mGBA-0.10.5-appimage-x64.appimage).
+Make sure the appimage is executable:
+```bash
+$ sudo chmod +x ./MGBA.appimage
+```
 
 then create the payload as done before:
 ```bash
