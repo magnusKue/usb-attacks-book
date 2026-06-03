@@ -57,12 +57,12 @@ networks:
 To build the Docker image from scratch and launch the C2 daemon persistently in the background, run the following command inside your deployment directory:
 
 ```bash
-    docker compose up -d --build 
+$ docker compose up -d --build 
 ```
 ### 4. Generating the Operator Profile
 
 Because Sliver relies entirely on mTLS for client connections, an operator profile containing unique X.509 certificates must be created inside the running container before any client can connect:
 
 ``` bash
-    docker exec -it sliver-server /root/sliver-server operator --name _your_name --lhost _your_IP --save /tmp/meinlaptop.cfg
+$ docker exec -it sliver-server /root/sliver-server operator --name _your_name --lhost _your_IP --save /tmp/meinlaptop.cfg
 ```

