@@ -1,21 +1,21 @@
 {{#title P4wnP1 Demo}}
 # Demo
-To demonstrate the capabilities of this setup, we created a small demo where the P4wnP1 loads a ROM (Super Mario Land) and a Game Boy emulator via MSC and starts playing it automatically.
+To demonstrate the capabilities of this setup, we created a small demo where the P4wnP1 loads a ROM (Pokemon Yellow) and a Game Boy emulator via MSC and starts playing it automatically.
 
 ## Storage Preparation
 Start by preparing the required files.
 Create a `payload` directory in `/usr/local/P4wnP1/helper`.
 
-### mGBA
+0. mGBA
 I'm using the mGBA emulator here.
 Download the AppImage [here](https://github.com/mgba-emu/mgba/releases/download/0.10.5/mGBA-0.10.5-appimage-x64.appimage).
 Rename it to `MGBA.appimage` and place it in the payload directory.
 
-### Pokemon Yellow
+0. Pokemon Yellow
 Make sure to legally dump your own copy of the game — just Google "Vimm's Lair Pokemon Yellow ROM" to learn how! :)
 Then add the ROM to the payload directory, renamed to `POKY.gb`.
 
-### Key Extender
+0. Key Extender
 There is one significant problem: the P4wnP1 does not provide an API for holding down keys. The standard `press()` and `type()` functions only hold keys for 1ms.
 This is a problem for Game Boy games, which poll inputs from a hardware register rather than using input events like a terminal would.
 
@@ -42,7 +42,7 @@ This works, but introduces another problem: unlike X11, Wayland does not share i
 
 This is not an ideal solution, but it was the only approach that got the P4wnP1 to reliably control a Game Boy emulator. It is only necessary because the P4wnP1 is primarily designed as a text injector, not a game controller. For the purposes of this demo we will prepare the target system with a udev rule and leave it at that.
 
-### Building the Image
+0. Building the Image
 Once everything is in place, the payload directory should look like this:
 
 ```bash
