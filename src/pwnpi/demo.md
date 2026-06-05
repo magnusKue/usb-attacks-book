@@ -18,7 +18,7 @@ Then add the ROM to the payload directory, renamed to `POKY.gb`.
 
 ### 3. Key Extender
 There is one significant problem:  
-the P4wnP1 does not provide an API for holding down keys. The standard `press()` and `type()` functions only hold keys for 1ms.
+The P4wnP1 does not provide an API for holding down keys. The standard `press()` and `type()` functions only hold keys for 1ms.
 This is a problem for Game Boy games, which poll inputs from a hardware register rather than using input events like a terminal would.
 
 To work around this we use a small Python script that attaches to the P4wnP1's HID device and repeats all desired key presses, holding them down for 100ms.
@@ -40,7 +40,8 @@ This `wev` (Wayland event viewer) output shows the P4wnP1's original key press (
 
 This works, but introduces another problem: unlike X11, Wayland does not share input events globally. Each process only receives input targeted at its own window. This means there is no way for the script to capture all HID input events.
 
-**Root access is required.**
+> [!WARNING]
+> Root access is required for this demo!
 
 This is not an ideal solution, but it was the only approach that got the P4wnP1 to reliably control a Game Boy emulator. It is only necessary because the P4wnP1 is primarily designed as a text injector, not a game controller. For the purposes of this demo we will prepare the target system with a udev rule and leave it at that.
 
