@@ -112,7 +112,7 @@ key_extendr  MGBA.appimage  POKY.gb
 If it does, create the FAT32 image as before:
 
 ```bash
-$ ./genimg -i ./payload -o mario -l MARIO -s 2048
+$ ./genimg -i ./payload -o pokemon -l POKEMON -s 2048
 ```
 
 Next, enable mass storage.
