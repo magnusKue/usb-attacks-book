@@ -1,19 +1,19 @@
 {{#title P4wnP1 Demo}}
 # Demo
-To demonstrate the capabilities of this setup, we created a small demo where the P4wnP1 loads a ROM (Pokemon Yellow) and a Game Boy emulator via MSC and starts playing it automatically.
+To demonstrate the capabilities of this setup, we created a small demo where the P4wnP1 loads a ROM (Pokémon Yellow) and a Game Boy emulator via MSC and starts playing it automatically.
 
 ## Storage Preparation
 Start by preparing the required files.  
 Create a `payload` directory in `/usr/local/P4wnP1/helper`.
 
 ### 1. mGBA
-I'm using the mGBA emulator here.  
+This guide uses the mGBA emulator.  
 - Download the AppImage [here](https://github.com/mgba-emu/mgba/releases/download/0.10.5/mGBA-0.10.5-appimage-x64.appimage).
 - Rename it to `MGBA.appimage`
 - And place it in the payload directory.
 
-### 2. Pokemon Yellow
-Make sure to legally dump your own copy of the game. Just Google "Vimm's Lair Pokemon Yellow ROM" to learn how! :)  
+### 2. Pokémon Yellow
+Make sure to legally dump your own copy of the game. :)  
 Then add the ROM to the payload directory, renamed to `POKY.gb`.
 
 ### 3. Key Extender
@@ -21,7 +21,7 @@ Then add the ROM to the payload directory, renamed to `POKY.gb`.
 The P4wnP1 does not provide an API for holding down keys. The standard `press()` and `type()` functions only hold keys for 1ms.
 This is a problem for Game Boy games, which poll inputs from a hardware register rather than using input events like a terminal would.
 
-To work around this we use a small Python script that attaches to the P4wnP1's HID device and repeats all desired key presses, holding them down for 100ms.
+To work around this we use a small Python script that listens to the P4wnP1's HID input events and repeats all desired key presses, holding them down for 100ms (configurable).
 With the script running, the emulator sees the following:
 
 ```bash
@@ -51,7 +51,7 @@ Start by adding a new udev rule on the system the demo will run on:
 KERNEL=="uinput", GROUP="input", MODE="0660"
 KERNEL=="event*", GROUP="input", MODE="0660"
 ```
-This will add read and write permission to root and the input groupe for the input- and event- device files created by udev!  
+This will add read and write permission to root and the input group for the input and event device files created by udev!  
 Next add yourself to the input group and reload udev:
 ```bash
 $ sudo usermod -aG input $USER
@@ -59,8 +59,8 @@ $ newgrp input
 
 $ sudo udevadm control --reload && sudo udevadm trigger
 ```
-To make sure everything is changed idealy reboot now or start a new session.
-Opening a new terminal and typing:
+To make sure everything is changed ideally reboot now or start a new session.
+Opening a new terminal and typing
 ```bash
 $ groups
 ```
@@ -69,7 +69,7 @@ should list `input`.
 Also test if the permissions on the device files are good. It should look like this:
 ```bash
 $ cd /dev/input
-$ ll
+$ ls -l
 Permissions  Size User Group Date Modified  Name         
 crw-rw----  13,64 root input  5 Jun 10:57   event0
 crw-rw----  13,65 root input  5 Jun 10:57   event1
@@ -80,8 +80,8 @@ So let's setup the script.
 The script is in the demo's [gitea repo](https://git.magnusku.de/Magnus/p4wnp1_gb_autoplay) in the `key_extendr` directory.
 
 To build this we need some dependencies:
-- You will need pyinstaller on your system, it will take care of the scripts dependencies though! 
-- The `uinput` kernelmodule must be installed as we need to manually include it's `.so` library.
+- You will need pyinstaller on your system, it will take care of the script's dependencies though! 
+- The `uinput` kernelmodule must be installed as we need to manually include its `.so` library.
 
 Run the following to clone the project:
 ```bash
@@ -89,10 +89,10 @@ $ git clone https://git.magnusku.de/Magnus/p4wnp1_gb_autoplay
 $ cd p4wnp1_gb_autoplay/key_extendr 
 ```
 
-The script detects the Usb stick by its name which you can set under `Product Name` in the P4wnP1's web ui. 
-Edit the scripts `DEV_NAME_FRAG` variable to contain an unique fragment within the name you chose!  
+The script detects the USB stick by its name which you can set under `Product Name` in the P4wnP1's web UI. 
+Edit the script's `DEV_NAME_FRAG` variable to contain a unique fragment within the name you chose!  
 
-Then bundle the script, python vm and dependencies into an binary using pyinstaller:
+Then bundle the script, Python VM and dependencies into a binary using pyinstaller:
 ```bash
 $ make all 
 ```
@@ -118,4 +118,39 @@ $ ./genimg -i ./payload -o mario -l MARIO -s 2048
 Next, enable mass storage.
 
 ## Payload Preparation
-Now onto the payload!
+Now onto the payload!  
+The script can also be found in the [gitea repo](https://git.magnusku.de/Magnus/p4wnp1_gb_autoplay) we cloned earlier.  
+
+### 1. Configuration
+First cd into the root directory of your clone.  
+Installation requires you to have access to the p4wnp1 via ssh. 
+- Change its IP address in the project's root Makefile if needed (`TARGET` variable).
+- In `./config.js` set the drive label of the above created image, the keyboard layout and the needed inputs to open a terminal on the target system
+
+### 2. Build and ship
+Now just ready up the payload and put it on the pi:
+```bash
+$ make all  # build -> "./build/<NAME>.js"
+$ make sync # sync with pi per ssh
+```
+
+This will concatenate all of the source `.js` files into one payload and copy it into the payload directory on the pi.
+
+
+## P4wnP1 settings
+Now open the P4wnP1's webUI and change the following:
+- In the USB Settings enable Keyboard inputs and Mass Storage Emulation, select the Image we created.
+- In the USB device configuration make sure the `Product Name` contains the fragment we set in the `key_extendr.py` config
+
+And that's all!
+
+## Execution
+
+Now we're ready.
+Execute the payload either via the WebUI or by running 
+```bash
+$ make execute
+```
+in the projects root.
+
+Enjoy the demo.
