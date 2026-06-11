@@ -25,7 +25,3 @@ USB attacks are surprisingly easy to pull off and hard to defend against. A devi
 ## What This Book Is
 
 This book contains tutorials for setting up all three projects. It was written for our university module and is meant for educational purposes only.
-
-## AI usage
-
-All of these pages have been written by hand. AI has only been used to fix up grammar and spelling mistakes!
