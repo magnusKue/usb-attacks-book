@@ -12,7 +12,7 @@ First, we need to flash a firmware to the chip — in our case [CircuitPython](h
 
 ## Installing the Code
 
-Our code is hosted on [GitLab here](https://git.magnusku.de/Magnus/ruber-ducky).
+Our code is hosted on [Gitea here](https://git.magnusku.de/Magnus/ruber-ducky).
 
 Start by creating a local copy anywhere on your computer:
 
